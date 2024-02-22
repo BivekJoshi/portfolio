@@ -101,6 +101,7 @@ const Profile = () => {
             right: 0,
             zIndex: 1,
             borderRadius: "12px",
+            boxShadow: "5px 0 5px rgb(7, 11, 20)"
           }}
         >
           <MainProfile />

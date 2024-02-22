@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const ClickableButton = ({ buttonName, icon, path }) => {
   const navigate = useNavigate();
 
-  console.log(routhId);
   return (
     <div
       style={{

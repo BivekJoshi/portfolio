@@ -9,7 +9,7 @@ const Layout = () => {
         backgroundColor: "#0B0F17",
         width: "100%",
         height: "100vh",
-        color: "#ffff",
+        color: "#D1D5DB",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -36,6 +36,11 @@ const Layout = () => {
               height: "95%",
               backgroundColor: "#111827",
               marginTop: "12px",
+              overflowY:"scroll",
+              scrollbarWidth: "thin",
+              scrollbarColor: "#4B5563 #1F2937", 
+              WebkitOverflowScrolling: "touch",  
+              msOverflowStyle: "none" 
             }}
           >
             <LandingUI />
