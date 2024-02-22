@@ -3,6 +3,10 @@ import Scene from "../../assets/Scene.jpg";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCloudDownloadAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
 
 const MainProfile = () => {
   return (
@@ -50,6 +54,44 @@ const MainProfile = () => {
             Bivek Pd. Joshi
           </div>
           <h5 style={{ color: "orange" }}>I am a Frontend Developer</h5>
+          <div style={{ display: "flex", gap: "1rem", fonSize: "24px" }}>
+            <FaFacebook
+              style={{ cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "orange";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "rgb(242, 242, 242)";
+              }}
+            />
+            <FiInstagram
+              style={{ cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "orange";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "rgb(242, 242, 242)";
+              }}
+            />
+            <FaDiscord
+              style={{ cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "orange";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "rgb(242, 242, 242)";
+              }}
+            />
+            <FaGithub
+              style={{ cursor: "pointer" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "orange";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "rgb(242, 242, 242)";
+              }}
+            />
+          </div>
         </div>
       </div>
       <div
@@ -60,6 +102,7 @@ const MainProfile = () => {
           height: "64px",
           borderTop: "1px solid rgb(119, 119, 119)",
           display: "flex",
+          cursor: "pointer",
         }}
       >
         <div
@@ -68,13 +111,21 @@ const MainProfile = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            borderRight:"1px solid rgb(119, 119, 119)",
-            fontSize:"14px",
-            gap:"12px"
+            borderRight: "1px solid rgb(119, 119, 119)",
+            fontSize: "14px",
+            gap: "12px",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#1F2937";
+            e.currentTarget.style.color = "orange";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#111827";
+            e.currentTarget.style.color = "rgb(242, 242, 242)";
           }}
         >
           DOWNLOAD CV
-          <FaCloudDownloadAlt style={{ fontSize: "24px" }}/>
+          <FaCloudDownloadAlt style={{ fontSize: "24px" }} />
         </div>
         <div
           style={{
@@ -82,12 +133,20 @@ const MainProfile = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize:"14px",
-            gap:"12px"
+            fontSize: "14px",
+            gap: "12px",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#1F2937";
+            e.currentTarget.style.color = "orange";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "#111827";
+            e.currentTarget.style.color = "rgb(242, 242, 242)";
           }}
         >
-          MY LINKIN
-          <FaLinkedin style={{ fontSize: "24px" }}/>
+          MY LINKEDIN
+          <FaLinkedin style={{ fontSize: "24px" }} />
         </div>
       </div>
     </div>

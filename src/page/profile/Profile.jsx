@@ -10,6 +10,54 @@ import { FaEye } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
 import { MdOutlineDensitySmall } from "react-icons/md";
 
+const REDIRECT = [
+  {
+    id: 1,
+    path: "",
+    icon: <MdOutlineDensitySmall />,
+  },
+  {
+    id: 2,
+    path: "",
+    icon: <MdOutlineMenuBook />,
+  },
+  {
+    id: 3,
+    path: "aboutMe",
+    buttonName: "ABOUT",
+    icon: <IoMdContact />,
+  },
+  {
+    id: 4,
+    path: "resume",
+    buttonName: "RESUME",
+    icon: <AiFillProfile />,
+  },
+  {
+    id: 5,
+    path: "work",
+    buttonName: "WORKS",
+    icon: <FaEye />,
+  },
+  {
+    id: 6,
+    path: "",
+    buttonName: "EDUCATI..",
+    icon: <SiBlogger />,
+  },
+  {
+    id: 7,
+    path: "",
+    buttonName: "STATS",
+    icon: <IoStatsChartSharp />,
+  },
+  {
+    id: 8,
+    path: "contact",
+    buttonName: "CONTACT",
+    icon: <FaLocationArrow />,
+  },
+];
 const Profile = () => {
   return (
     <div
@@ -29,14 +77,13 @@ const Profile = () => {
           gap: ".5rem",
         }}
       >
-        <ClickableButton icon={<MdOutlineDensitySmall/>}/>
-        <ClickableButton icon={<MdOutlineMenuBook/>}/>
-        <ClickableButton icon={<IoMdContact/>} buttonName="ABOUT"/>
-        <ClickableButton icon={<AiFillProfile/>} buttonName="RESUME"/>
-        <ClickableButton icon={<FaEye/>} buttonName="WORKS"/>
-        <ClickableButton icon={<SiBlogger/>} buttonName="BLOG"/>
-        <ClickableButton icon={<IoStatsChartSharp/>} buttonName="STATS"/>
-        <ClickableButton icon={<FaLocationArrow/>} buttonName="CONTACT"/>
+        {REDIRECT.map((data, index) => {
+          return (
+            <div key={index}>
+              <ClickableButton icon={data?.icon} path={data?.path} buttonName={data?.buttonName}/>
+            </div>
+          );
+        })}
       </div>
       <div
         style={{
@@ -53,10 +100,10 @@ const Profile = () => {
             position: "absolute",
             right: 0,
             zIndex: 1,
-            borderRadius:"12px"
+            borderRadius: "12px",
           }}
         >
-          <MainProfile/>
+          <MainProfile />
         </div>
         <div
           style={{
@@ -65,7 +112,7 @@ const Profile = () => {
             width: "100%",
             height: "100%",
             bottom: 10,
-            borderRadius:"12px"
+            borderRadius: "12px",
           }}
         />
       </div>

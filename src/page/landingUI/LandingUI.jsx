@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderText from "../../components/HeaderText/HeaderText";
+import { Outlet } from "react-router-dom";
 
 const LandingUI = () => {
   return (
@@ -10,7 +11,7 @@ const LandingUI = () => {
         boxShadow: "inset 5px 0 5px rgb(7, 11, 20)",
       }}
     >
-      <HeaderText/>
+      <Outlet />
     </div>
   );
 };
