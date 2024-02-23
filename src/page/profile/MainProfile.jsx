@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
+import "./TypeWriter.css";
 
 const MainProfile = () => {
   return (
@@ -31,6 +32,7 @@ const MainProfile = () => {
             height: "150px",
             borderRadius: "50%",
             overflow: "hidden",
+            // boxShadow: "0 0 12px orange",
           }}
         >
           <img
@@ -53,7 +55,9 @@ const MainProfile = () => {
           <div style={{ fontSize: "35px", fontWeight: "bold" }}>
             Bivek Pd. Joshi
           </div>
-          <h5 style={{ color: "orange" }}>I am a Frontend Developer</h5>
+          <div class="animated-text" style={{ color: "orange" ,padding:"10px"}}>
+            <span></span>
+          </div>
           <div style={{ display: "flex", gap: "1rem", fonSize: "24px" }}>
             <FaFacebook
               style={{ cursor: "pointer" }}

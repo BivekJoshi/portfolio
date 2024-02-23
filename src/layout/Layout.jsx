@@ -1,6 +1,7 @@
 import React from "react";
 import Profile from "../page/profile/Profile";
 import LandingUI from "../page/landingUI/LandingUI";
+import './Layout.css';
 
 const Layout = () => {
   return (
@@ -42,6 +43,7 @@ const Layout = () => {
               WebkitOverflowScrolling: "touch",  
               msOverflowStyle: "none" 
             }}
+            className="landing-ui"
           >
             <LandingUI />
           </div>

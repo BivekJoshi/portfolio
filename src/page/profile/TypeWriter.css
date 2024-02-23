@@ -1,0 +1,72 @@
+.animated-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.animated-text span {
+  position: relative;
+}
+
+.animated-text span::before {
+  content: "Web Designer";
+  color: orange;
+  animation: words 20s infinite;
+}
+
+.animated-text span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #111827;
+  /* border-left: 2px solid #ff7f50; */
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 25s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #ff7f5000;
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Frontend Developer";
+  }
+  21%,
+  40% {
+    content: "React Developer";
+  }
+  /* 41%,
+  60% {
+    content: "Designer";
+  } */
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}

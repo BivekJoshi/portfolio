@@ -11,16 +11,16 @@ import { IoMdContact } from "react-icons/io";
 import { MdOutlineDensitySmall } from "react-icons/md";
 
 const REDIRECT = [
-  {
-    id: 1,
-    path: "",
-    icon: <MdOutlineDensitySmall />,
-  },
-  {
-    id: 2,
-    path: "",
-    icon: <MdOutlineMenuBook />,
-  },
+  // {
+  //   id: 1,
+  //   path: "",
+  //   icon: <MdOutlineDensitySmall />,
+  // },
+  // {
+  //   id: 2,
+  //   path: "",
+  //   icon: <MdOutlineMenuBook />,
+  // },
   {
     id: 3,
     path: "aboutMe",
@@ -41,13 +41,13 @@ const REDIRECT = [
   },
   {
     id: 6,
-    path: "",
+    path: "education",
     buttonName: "EDUCATI..",
     icon: <SiBlogger />,
   },
   {
     id: 7,
-    path: "",
+    path: "stats",
     buttonName: "STATS",
     icon: <IoStatsChartSharp />,
   },

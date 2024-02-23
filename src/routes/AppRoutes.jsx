@@ -6,6 +6,8 @@ import AboutMe from "../page/aboutme/AboutMe";
 import Contact from "../page/contact/Contact";
 import Resume from "../page/resume/Resume";
 import Work from "../page/work/Work";
+import LinkFollow from "../page/stats/LinkFollow";
+import Education from "../page/education/Education";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +19,8 @@ const AppRoutes = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/work" element={<Work />} />
+          <Route path="/stats" element={<LinkFollow />} />
+          <Route path="/education" element={<Education />} />
         </Route>
       </Routes>
     </BrowserRouter>

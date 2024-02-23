@@ -1,0 +1,14 @@
+/* Layout.css */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.landing-ui {
+  animation: fadeIn 0.7s ease-in-out;
+}
