@@ -7,7 +7,7 @@ import Git from "../../assets/Git.png";
 import Insta from "../../assets/Insta.png";
 import LinkIn from "../../assets/Linkin.png";
 
-const LinkFollow = () => {
+const LinkFollow = ({mode}) => {
   const LINK_LIST = [
     {
       id: 1,
@@ -57,6 +57,7 @@ const LinkFollow = () => {
                 title={data?.title}
                 desc={data?.desc}
                 redirectUrl={data?.redirectUrl}
+                mode={mode}
               />
             </div>
           );

@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100..900&family=Oswald:wght@200..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
   </head>
-  <body style="margin: 0">
+  <body style="font-family: Rubik; margin: 0">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Retrieve mode from localStorage
+      const storedMode = localStorage.getItem('mode');
+      
+      // Check if a mode is stored and apply it to the document
+      if (storedMode) {
+        document.documentElement.setAttribute('data-theme', storedMode);
+      }
+    </script>
   </body>
 </html>

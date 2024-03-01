@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { IoArrowRedo } from "react-icons/io5";
+import { useMode } from "../../layout/ModeContext";
 
 const LinkUI = ({ image, title, desc, redirectUrl }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { mode } = useMode();
   return (
     <div
       style={{
-        backgroundColor: isHovered ? "rgb(52, 61, 73)" : "#1F2937",
+        backgroundColor: isHovered
+          ? mode === "dark"
+            ? "rgb(52, 61, 73)"
+            : "rgb(170, 170, 170)"
+          : mode === "dark"
+          ? "#1F2937"
+          : "rgb(206, 206, 206)",
         height: "50px",
         borderRadius: "6px",
         padding: "9px",
@@ -41,7 +49,7 @@ const LinkUI = ({ image, title, desc, redirectUrl }) => {
             position: "absolute",
             right: 0,
             top: -6,
-            backgroundColor: "#0B0F17",
+            backgroundColor: mode==="dark"?"#0B0F17":"#EFCB89",
             borderRadius: "50%",
             padding: "4px",
           }}

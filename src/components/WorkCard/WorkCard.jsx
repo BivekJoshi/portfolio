@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaEye } from "react-icons/fa"; // Import the eye icon
+import "./workCard.css";
 
-const WorkCard = ({image,title,subTitle}) => {
+const WorkCard = ({ image, title, subTitle }) => {
+  const [showEyeIcon, setShowEyeIcon] = useState(false);
   return (
-    <div>
+    <div className="work-card-container">
       <div
-        style={{ width: "300px", height: "170px" }}
+        className="image-container"
+        onMouseEnter={() => setShowEyeIcon(true)}
+        onMouseLeave={() => setShowEyeIcon(false)}
       >
-        <img src={image} style={{width:"100%",height:"100%"}}/>
+        <img src={image} alt="work" />
+        {showEyeIcon && (
+          <div className="overlay">
+            <FaEye className="eye-icon" />
+          </div>
+        )}
       </div>
       <div
         style={{
@@ -14,7 +24,7 @@ const WorkCard = ({image,title,subTitle}) => {
           flexDirection: "column",
           alignItems: "center",
           gap: "6px",
-          marginBottom:"12px"
+          marginBottom: "12px",
         }}
       >
         <div>{title}</div>

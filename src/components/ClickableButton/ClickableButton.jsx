@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const ClickableButton = ({ buttonName, icon, path }) => {
+const ClickableButton = ({ buttonName, icon, path, mode }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeButton, setActiveButton] = useState("");
@@ -18,8 +18,15 @@ const ClickableButton = ({ buttonName, icon, path }) => {
       style={{
         width: "70px",
         height: "60px",
-        backgroundColor: activeButton === path ? "#705017" : "#111827",
-        color: "rgb(242, 242, 242)",
+        backgroundColor:
+          activeButton === path
+            ? mode === "dark"
+              ? "#705017"
+              : "#EFCB89"
+            : mode === "dark"
+            ? "#111827"
+            : "#E5E5E5",
+        color: mode === "dark" ? "rgb(242, 242, 242)" : "black",
         borderRadius: "5px",
         display: "flex",
         alignItems: "center",
@@ -33,13 +40,19 @@ const ClickableButton = ({ buttonName, icon, path }) => {
       }}
       onClick={() => navigate(`${path}`)}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = "#1F2937";
+        e.currentTarget.style.backgroundColor = mode==="dark"?"#1F2937":"rgb(191, 191, 191)";
         // e.currentTarget.style.color = "orange";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor =
-          activeButton === path ? "#705017" : "#111827";
-        e.currentTarget.style.color = activeButton === "rgb(242, 242, 242)";
+        (e.currentTarget.style.backgroundColor =
+          activeButton === path
+            ? mode === "dark"
+              ? "#705017"
+              : "#EFCB89"
+            : mode === "dark"
+            ? "#111827"
+            : "#E5E5E5"),
+          (e.currentTarget.style.color = activeButton === "rgb(242, 242, 242)");
       }}
     >
       <div

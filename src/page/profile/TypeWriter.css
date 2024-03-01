@@ -13,13 +13,21 @@
   animation: words 20s infinite;
 }
 
-.animated-text span::after {
+.animated-text.dark-mode span::after {
   content: "";
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
   background-color: #111827;
-  /* border-left: 2px solid #ff7f50; */
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 25s steps(14) infinite;
+}
+.animated-text.light-mode span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #E5E5E5;
   right: -8px;
   animation: cursor 0.8s infinite, typing 25s steps(14) infinite;
 }

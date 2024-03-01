@@ -15,18 +15,25 @@ const LIST = [
     id: 2,
     title: "Yejus Paw",
     subTitle: "A complete Guide for your pet",
-    image:YejusPaw,
+    image: YejusPaw,
   },
   {
     id: 3,
     title: "helo",
     subTitle: "hiiii",
+    image: YejusPaw,
   },
   {
-    id: 4,
+    id: 3,
     title: "helo",
     subTitle: "hiiii",
+    image: YejusPaw,
   },
+  // {
+  //   id: 4,
+  //   title: "helo",
+  //   subTitle: "hiiii",
+  // },
 ];
 const Work = () => {
   return (
@@ -43,7 +50,11 @@ const Work = () => {
       >
         {LIST.map((data, index) => (
           <React.Fragment key={data.id}>
-            <WorkCard image={data?.image} title={data?.title} subTitle={data?.subTitle}/>
+            <WorkCard
+              image={data?.image}
+              title={data?.title}
+              subTitle={data?.subTitle}
+            />
             {index % 2 === 0 && index !== LIST.length - 1 && (
               <div
                 style={{

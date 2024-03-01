@@ -14,3 +14,11 @@
 .landing-ui {
   animation: openFromMiddle 3s ease-in-out;
 }
+
+@media (min-width: 320px) {
+  .layout-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}

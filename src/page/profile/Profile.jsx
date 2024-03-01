@@ -58,7 +58,8 @@ const REDIRECT = [
     icon: <FaLocationArrow />,
   },
 ];
-const Profile = () => {
+const Profile = ({ mode }) => {
+  // console.log(mode,"modddddddddddddddddddddddd");
   return (
     <div
       style={{
@@ -80,7 +81,12 @@ const Profile = () => {
         {REDIRECT.map((data, index) => {
           return (
             <div key={index}>
-              <ClickableButton icon={data?.icon} path={data?.path} buttonName={data?.buttonName}/>
+              <ClickableButton
+                icon={data?.icon}
+                path={data?.path}
+                buttonName={data?.buttonName}
+                mode={mode}
+              />
             </div>
           );
         })}
@@ -94,21 +100,25 @@ const Profile = () => {
       >
         <div
           style={{
-            backgroundColor: "#111827",
+            backgroundColor: mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
             width: "97%",
             height: "100%",
             position: "absolute",
             right: 0,
             zIndex: 1,
             borderRadius: "12px",
-            boxShadow: "5px 0 5px rgb(7, 11, 20)"
+            boxShadow:
+              mode === "dark"
+                ? "5px 0 5px rgb(7, 11, 20)"
+                : "5px 0 5px rgb(147, 147, 147)",
           }}
         >
-          <MainProfile />
+          <MainProfile mode={mode} />
         </div>
         <div
           style={{
-            backgroundColor: "#2A2110",
+            // backgroundColor: "red",
+            backgroundColor: mode === "dark" ? "#705017" : "#EFCB89",
             position: "relative",
             width: "100%",
             height: "100%",
