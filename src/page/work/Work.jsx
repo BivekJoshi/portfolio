@@ -38,7 +38,7 @@ const LIST = [
 const Work = () => {
   return (
     <div>
-      <HeaderText headerTitle="Work" />
+      <HeaderText headerTitle="Works (Each Projects is a unique piece of development)" />
       <div
         style={{
           display: "flex",

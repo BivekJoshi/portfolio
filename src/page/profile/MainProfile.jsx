@@ -22,8 +22,8 @@ const MainProfile = () => {
           src={Scene}
           style={{
             width: "100%",
-            height: "250px",
-            borderRadius: "0 0 50% 50% / 0 0 40% 40%",
+            height: "270px",
+            borderRadius: "50% 0% 49% 51% / 0% 55% 45% 46%",
           }}
           alt="Scene"
         />
@@ -35,7 +35,7 @@ const MainProfile = () => {
             transform: "translate(-50%, -50%)",
             width: "150px",
             height: "150px",
-            borderRadius: "50%",
+            borderRadius: "50% ",
             overflow: "hidden",
             // boxShadow: "0 0 12px orange",
           }}
@@ -142,6 +142,12 @@ const MainProfile = () => {
             fontSize: "14px",
             gap: "12px",
           }}
+          onClick={() =>
+            window.open(
+              "https://www.pdffiller.com/jsfiller-desk20/?flat_pdf_quality=low&requestHash=64921e5ec6debac1ca3dad9839f7eefdac8d323737f1523032d3dcd2a01d6cef&projectId=1461055256&loader=tips&PAGE_REARRANGE_V2_MVP=true&richTextFormatting=true&isPageRearrangeV2MVP=true&jsf-page-rearrange-v2=true&LATEST_PDFJS=true&jsf-document-scroll-zoom=true&jsf-redesign-full=true&act-notary-pro-integration=false&jsf-new-add-fields-popup=false&routeId=d946b1fd11caeaffa9937fe8cb1c57d9#be4ebb6c03ff476880efebd2c3cc4774",
+              "_blank"
+            )
+          }
           // onMouseEnter={(e) => {
           //   e.currentTarget.style.backgroundColor =
           //     mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";

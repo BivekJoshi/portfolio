@@ -13,6 +13,9 @@ const LandingUI = () => {
       className="landing-ui"
     >
       <Outlet />
+      <br />
+      <br />
+      <br/>
     </div>
   );
 };

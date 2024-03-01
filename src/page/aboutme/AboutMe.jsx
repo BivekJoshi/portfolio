@@ -1,6 +1,43 @@
 import React from "react";
 import HeaderText from "../../components/HeaderText/HeaderText";
+import Html from "../../assets/Work/Html.png";
+import Js from "../../assets/Work/JS.png";
+import Css from "../../assets/Work/CSS.png";
+import ReactJs from "../../assets/Work/ReactJs.png";
+import Figma from "../../assets/Work/Figma.png";
+import GitLab from "../../assets/Work/GitLab.png";
+import GitLogo from "../../assets/Work/GitLogo.png";
 
+const Skill = [
+  {
+    img: Html,
+    title: "Html",
+  },
+  {
+    img: Css,
+    title: "Css",
+  },
+  {
+    img: Js,
+    title: "Javascript",
+  },
+  {
+    img: ReactJs,
+    title: "ReactJs",
+  },
+  {
+    img: Figma,
+    title: "Figma",
+  },
+  {
+    img: GitLab,
+    title: "GitLab",
+  },
+  {
+    img: GitLogo,
+    title: "Git",
+  },
+];
 const AboutMe = () => {
   return (
     <div>
@@ -23,11 +60,40 @@ const AboutMe = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <p>Address ............ Tangal-19, Lalitpur</p>
-            <div>Age ............  21</div>
+            <div>Age ............ 21</div>
           </div>
         </div>
       </div>
-      <HeaderText headerTitle="My Strength" />
+      <HeaderText headerTitle="Skills/ Tools" />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "4rem",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          marginTop:"2rem"
+        }}
+      >
+        {Skill.map((data, index) => {
+          return (
+            <div
+              key={index}
+              style={{
+                width: "50px",
+                height: "50px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems:"center",
+                justifyContent:"center"
+              }}
+            >
+              <img src={data?.img} style={{ width: "100%", height: "100%" }} />
+              <div><b>{data?.title}</b></div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

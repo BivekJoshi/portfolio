@@ -135,7 +135,59 @@ const Resume = () => {
           />
         </div>
       </div>
-      <HeaderText headerTitle="Skills" />
+      <HeaderText headerTitle="Carrer Objectives" />
+      <div style={{ fontSize: "16px" }}>
+        To be a part of the firm where I can devote myself fully and joyfully
+        give best of my talent and skill to become its strong assets. To secure
+        further learning with the IT Domain, where I can utilize my skills and
+        training background to the maximum.
+      </div>
+      <HeaderText headerTitle="Strength" />
+      <ul>
+        <li>
+          <div style={{ display: "flex" }}>
+            Learning:{" "}
+            <div style={{ color: "#6B7280", marginLeft: "1rem" }}>
+              Ability to learn new technologies and skills quickly and
+              independently
+            </div>
+          </div>
+        </li>
+        <li>
+          <div style={{ display: "flex" }}>
+            Adaptibility:{" "}
+            <div style={{ color: "#6B7280", marginLeft: "1rem" }}>
+              Ability to adjust to changing requirements and environments.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div style={{ display: "flex" }}>
+            Problem-solving:{" "}
+            <div style={{ color: "#6B7280", marginLeft: "1rem" }}>
+              Ability to analyze and solve problems using logic and creativity.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div style={{ display: "flex" }}>
+            Collaboration:{" "}
+            <div style={{ color: "#6B7280", marginLeft: "1rem" }}>
+              Ability to work well with others in a team and share ideas and
+              feedback.
+            </div>
+          </div>
+        </li>
+        <li>
+          <div style={{ display: "flex" }}>
+            Commnication:{" "}
+            <div style={{ color: "#6B7280", marginLeft: "1rem" }}>
+              Ability to communicate effectively with other developers, clients
+              and users.
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };
