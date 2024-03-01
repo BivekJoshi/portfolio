@@ -6,7 +6,6 @@ import DGHUB from "../../assets/DGHUB.png";
 import TU from "../../assets/TU.png";
 import Moonlight from "../../assets/Moonlight.png";
 
-
 const EDUEXPUI = ({
   title,
   timeContext,
@@ -46,25 +45,30 @@ const EDUEXPUI = ({
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
-              <div
-                style={{
-                  color: "orange",
-                  border: "1px solid orange",
-                  width: "fit-content",
-                  padding: "4px",
-                  fontWeight: "bold",
-                  fontSize: "12px",
-                  marginBottom: "12px",
-                }}
-              >
-                {timeContext}
-              </div>
+              {timeContext && (
+                <div
+                  style={{
+                    color: "orange",
+                    border: "1px solid orange",
+                    width: "fit-content",
+                    padding: "4px",
+                    fontWeight: "bold",
+                    fontSize: "12px",
+                    marginBottom: "12px",
+                  }}
+                >
+                  {timeContext}
+                </div>
+              )}
+
               <div style={{ fontSize: "16px" }}>{head}</div>
               <div style={{ fontSize: "13px" }}>{address}</div>
             </div>
-            <div style={{ width: "80px", height: "70px" }}>
-              <img src={logoImg} style={{ width: "100%", height: "100%" }} />
-            </div>
+            {logoImg && (
+              <div style={{ width: "80px", height: "70px" }}>
+                <img src={logoImg} style={{ width: "100%", height: "100%" }} />
+              </div>
+            )}
           </div>
           <div style={{ fontSize: "13px", color: "#6B7280" }}>{desc}</div>
         </div>
@@ -111,11 +115,6 @@ const Resume = () => {
       <div style={{ width: "100%", display: "flex" }}>
         <div style={{ width: "50%", padding: "8px" }}>
           {/* <EDUEXPUI
-            title="Education"
-            timeContext="PRESENT 2024"
-            head="Shankerdev Campus"
-            address="Putalisadak, Kathmandu"
-            logoImg={TU}
             desc="Tribhuvan University (Oldest and the largest university in Nepal)."
           /> */}
         </div>
@@ -136,6 +135,7 @@ const Resume = () => {
           />
         </div>
       </div>
+      <HeaderText headerTitle="Skills" />
     </div>
   );
 };

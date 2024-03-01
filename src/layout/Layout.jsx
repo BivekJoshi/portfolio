@@ -1,60 +1,76 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Profile from "../page/profile/Profile";
 import LandingUI from "../page/landingUI/LandingUI";
 import "./Layout.css";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { useMode } from "./ModeContext";
+import GIFF from "../assets/NightTime.gif"
+import DayTime from "../assets/DayTime.gif"
 
 const Layout = () => {
   const { mode, toggleMode } = useMode();
+
+  useEffect(() => {
+    // You can put background update logic here
+  }, [mode]); // Run this effect whenever mode changes
+
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-      <div
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: mode === "dark" ? "#D1D5DB" : "black",
+      }}
+    >
+      <img
+        src={mode === "dark" ? GIFF : DayTime}
+        alt="background"
         style={{
-          backgroundColor: mode === "dark" ? "#0B0F17" : "white",
+          position: "absolute",
           width: "100%",
           height: "100vh",
-          color: mode === "dark" ? "#D1D5DB" : "black",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          objectFit: "cover",
+          zIndex: -1,
         }}
-        className="layout-container"
+      />
+      <div
+        style={{
+          width: "85%",
+          height: "85vh",
+          display: "flex",
+        }}
       >
+        <div style={{ width: "40%", height: "100%" }}>
+          <Profile mode={mode} />
+        </div>
         <div
           style={{
-            width: "85%",
-            height: "85vh",
-            display: "flex",
+            width: "60%",
+            height: "100%",
           }}
         >
-          <div style={{ width: "40%", height: "100%" }}>
-            <Profile mode={mode} />
-          </div>
           <div
             style={{
-              width: "60%",
-              height: "100%",
+              height: "95%",
+              backgroundColor:
+                mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
+              marginTop: "12px",
+              overflowY: "scroll",
+              scrollbarWidth: "thin",
+              scrollbarColor:
+                mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
+              WebkitOverflowScrolling: "touch",
+              msOverflowStyle: "none",
             }}
+            className="landing-ui"
           >
-            <div
-              style={{
-                height: "95%",
-                backgroundColor:
-                  mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
-                marginTop: "12px",
-                overflowY: "scroll",
-                scrollbarWidth: "thin",
-                scrollbarColor:
-                  mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
-                WebkitOverflowScrolling: "touch",
-                msOverflowStyle: "none",
-              }}
-              className="landing-ui"
-            >
-              <LandingUI />
-            </div>
+            <LandingUI />
           </div>
         </div>
       </div>
@@ -103,20 +119,6 @@ const Layout = () => {
           </div>
         </div>
       </div>
-
-      {/* <div
-        style={{
-          position: "absolute",
-          width: "50%",
-          height: "10vh",
-          backgroundColor: "red",
-          top: "40%",
-          left:"50%",
-          right:"50%",
-          // transform:"50% 50%",
-          zIndex: 10001,
-        }}
-      ></div> */}
     </div>
   );
 };
