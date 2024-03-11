@@ -5,8 +5,8 @@ import "./Layout.css";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import { useMode } from "./ModeContext";
-import GIFF from "../assets/NightTime.gif"
-import DayTime from "../assets/DayTime.gif"
+import GIFF from "../assets/NightTime.gif";
+import DayTime from "../assets/DayTime.gif";
 
 const Layout = () => {
   const { mode, toggleMode } = useMode();
