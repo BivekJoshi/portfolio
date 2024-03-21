@@ -49,9 +49,9 @@ const Layout = () => {
         }}
       />
       {isMobile ?
-        <div style={{ width: "90%", height: "100%" }}>
+        <div style={{ width: "90%", height: "cover" }}>
           <Profile mode={mode} />
-          <div style={{ width: "100%", height: "100%", overflowY: "scroll" }}>
+          <div style={{ width: "100%", height: "cover", overflowY: "scroll" }}>
             <div
               style={{
                 // height: "60%",
