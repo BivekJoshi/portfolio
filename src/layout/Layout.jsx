@@ -51,14 +51,13 @@ const Layout = () => {
       {isMobile ?
         <div style={{ width: "90%", height: "100%" }}>
           <Profile mode={mode} />
-          <div style={{ width: "100%", height: "100%", overflowY: "scroll" }}>
+          <div style={{ width: "100%" }}>
             <div
               style={{
                 // height: "60%",
                 backgroundColor:
                   mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
                 marginTop: "12px",
-                overflowY: "scroll",
                 scrollbarWidth: "thin",
                 scrollbarColor:
                   mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
