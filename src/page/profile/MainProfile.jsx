@@ -138,7 +138,7 @@ const MainProfile = () => {
           fontSize: "14px",
           height: "64px",
           textDecoration:"none",
-          color:"black"
+          color:"white"
         }}>
           <div
             style={{

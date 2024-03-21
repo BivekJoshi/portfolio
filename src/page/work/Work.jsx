@@ -35,6 +35,12 @@ const LIST = [
     subTitle: "Complete Back office For Client",
     image:ClientsPortal,
   },
+  {
+    id: 5,
+    title: "KYC",
+    subTitle: "Know Your Client.",
+    image:ClientsPortal,
+  },
 ];
 const Work = () => {
   const [openModal, setOpenModal] = useState(false);
