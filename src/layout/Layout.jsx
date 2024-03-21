@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Profile from "../page/profile/Profile";
 import LandingUI from "../page/landingUI/LandingUI";
 import "./Layout.css";
@@ -10,10 +10,19 @@ import DayTime from "../assets/DayTime.gif";
 
 const Layout = () => {
   const { mode, toggleMode } = useMode();
+  const [isMobile, setIsMobile] = useState(false);
+
+
+  // console.log(isMobile,"ismobile");
 
   useEffect(() => {
-    // You can put background update logic here
-  }, [mode]); // Run this effect whenever mode changes
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as per your requirement
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
@@ -39,41 +48,65 @@ const Layout = () => {
           zIndex: -1,
         }}
       />
-      <div
-        style={{
-          width: "85%",
-          height: "85vh",
-          display: "flex",
-        }}
-      >
-        <div style={{ width: "40%", height: "100%" }}>
+      {isMobile ?
+        <div style={{ width: "90%", height: "100%" }}>
           <Profile mode={mode} />
-        </div>
+          <div style={{ width: "100%", height: "100%", overflowY: "scroll" }}>
+            <div
+              style={{
+                // height: "60%",
+                backgroundColor:
+                  mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
+                marginTop: "12px",
+                overflowY: "scroll",
+                scrollbarWidth: "thin",
+                scrollbarColor:
+                  mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
+                WebkitOverflowScrolling: "touch",
+                msOverflowStyle: "none",
+              }}
+              className="landing-ui"
+            >
+              <LandingUI />
+            </div>
+          </div>
+        </div> :
         <div
           style={{
-            width: "60%",
-            height: "100%",
+            width: "85%",
+            height: "85vh",
+            display: "flex",
           }}
         >
+          <div style={{ width: "40%", height: "100%" }}>
+            <Profile mode={mode} />
+          </div>
           <div
             style={{
-              height: "95%",
-              backgroundColor:
-                mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
-              marginTop: "12px",
-              overflowY: "scroll",
-              scrollbarWidth: "thin",
-              scrollbarColor:
-                mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
-              WebkitOverflowScrolling: "touch",
-              msOverflowStyle: "none",
+              width: "60%",
+              height: "100%",
             }}
-            className="landing-ui"
           >
-            <LandingUI />
+            <div
+              style={{
+                height: "95%",
+                backgroundColor:
+                  mode === "dark" ? "#111827" : "rgb(229, 229, 229)",
+                marginTop: "12px",
+                overflowY: "scroll",
+                scrollbarWidth: "thin",
+                scrollbarColor:
+                  mode === "dark" ? "#4B5563 #1F2937" : "#EFCB89 #E5E5E5 ",
+                WebkitOverflowScrolling: "touch",
+                msOverflowStyle: "none",
+              }}
+              className="landing-ui"
+            >
+              <LandingUI />
+            </div>
           </div>
-        </div>
-      </div>
+        </div>}
+
       <div
         style={{
           position: "absolute",
