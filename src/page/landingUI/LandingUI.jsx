@@ -21,6 +21,7 @@ const LandingUI = () => {
       style={{
         padding: "16px",
         height: isMobile ? "100%" : "95%",
+        overflowY:"scroll"
       }}
       className="landing-ui"
     >
