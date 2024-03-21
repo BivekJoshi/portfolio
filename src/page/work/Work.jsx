@@ -3,6 +3,8 @@ import HeaderText from "../../components/HeaderText/HeaderText";
 import WorkCard from "../../components/WorkCard/WorkCard";
 import HRMS from "../../assets/Work/HRMS.png";
 import YejusPaw from "../../assets/Work/YejusPaw.png";
+import Render from "../../assets/Work/Render.png";
+import ClientsPortal from "../../assets/Work/ClientsPortal.png";
 import WorkModal from "../../components/Modal/WorkModal";
 
 const LIST = [
@@ -22,23 +24,17 @@ const LIST = [
   },
   {
     id: 3,
-    title: "helo",
-    subTitle: "hiiii",
-    image: YejusPaw,
+    title: "Render Education",
+    subTitle: "Your Carrer Our Responsibility",
+    image: Render,
     desc: "",
   },
   {
-    id: 3,
-    title: "helo",
-    subTitle: "hiiii",
-    image: YejusPaw,
-    desc: "",
+    id: 4,
+    title: "Clients Portal",
+    subTitle: "Complete Back office For Client",
+    image:ClientsPortal,
   },
-  // {
-  //   id: 4,
-  //   title: "helo",
-  //   subTitle: "hiiii",
-  // },
 ];
 const Work = () => {
   const [openModal, setOpenModal] = useState(false);

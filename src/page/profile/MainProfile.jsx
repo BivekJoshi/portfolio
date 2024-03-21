@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Scene from "../../assets/Scene.jpg";
-import Scene from "../../assets/photo.png";
+import Scene from "../../assets/Patan.jpg";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCloudDownloadAlt } from "react-icons/fa";

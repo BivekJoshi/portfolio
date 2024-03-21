@@ -68,7 +68,7 @@ const WorkModal = ({ data, onClose }) => {
       </div>
       <div style={{ width: "cover", height: "350px" }}>
         <img
-          src={HRMS}
+          src={data?.image}
           style={{ width: "100%", height: "100%", borderRadius: "8px 8px 0 0" }}
         />
       </div>

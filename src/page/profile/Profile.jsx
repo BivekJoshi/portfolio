@@ -39,12 +39,12 @@ const REDIRECT = [
     buttonName: "WORKS",
     icon: <FaEye />,
   },
-  {
-    id: 6,
-    path: "education",
-    buttonName: "EDUCATI..",
-    icon: <SiBlogger />,
-  },
+  // {
+  //   id: 6,
+  //   path: "education",
+  //   buttonName: "EDUCATI..",
+  //   icon: <SiBlogger />,
+  // },
   {
     id: 7,
     path: "stats",

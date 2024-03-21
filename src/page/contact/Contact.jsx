@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderText from "../../components/HeaderText/HeaderText";
 import { useMode } from "../../layout/ModeContext";
+import { TextField } from "../../components/Form/TextField";
 
 const Contact = () => {
   const { mode } = useMode();
@@ -36,6 +37,21 @@ const Contact = () => {
         </div>
       </div>
       <HeaderText headerTitle="Contact Form" />
+      <div style={{ width: "97%", display: "flex", gap: "2rem" }}>
+        <TextField width="50%" placeholder="Full Name" />
+        <TextField width="50%" placeholder="Email Address" />
+      </div>
+      <TextField width="97%" placeholder="Your Message" textarea={true} />
+      <button style={{
+        backgroundColor: "#EFCB89",
+        border: "1px solid #E5E5E5",
+        padding: "9px",
+        borderRadius: "6px",
+        width: "144px",
+        color: "black",
+        fontWeight: "bold",
+        boxShadow: "inherit"
+      }}>Submit</button>
     </div>
   );
 };
