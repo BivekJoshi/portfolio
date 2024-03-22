@@ -17,7 +17,7 @@ const ClickableButton = ({ buttonName, icon, path, mode }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -27,16 +27,16 @@ const ClickableButton = ({ buttonName, icon, path, mode }) => {
   return (
     <div
       style={{
-        width: isMobile?"67px":"70px",
-        height: isMobile?"57px":"60px",
+        width: isMobile ? "50px" : "70px",
+        height: isMobile ? "50px" : "60px",
         backgroundColor:
           activeButton === path
             ? mode === "dark"
               ? "#705017"
               : "#EFCB89"
             : mode === "dark"
-            ? "#111827"
-            : "#E5E5E5",
+              ? "#111827"
+              : "#E5E5E5",
         color: mode === "dark" ? "rgb(242, 242, 242)" : "black",
         borderRadius: "5px",
         display: "flex",
@@ -44,14 +44,14 @@ const ClickableButton = ({ buttonName, icon, path, mode }) => {
         justifyContent: "center",
         cursor: "pointer",
         flexDirection: "column",
-        fontSize: "12px",
+        fontSize: isMobile ? "10px" : "12px",
         fontWeight: "bold",
         gap: "4px",
         transition: "background-color 0.3s ease, color 0.3s ease",
       }}
       onClick={() => navigate(`${path}`)}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = mode==="dark"?"#1F2937":"rgb(191, 191, 191)";
+        e.currentTarget.style.backgroundColor = mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";
         // e.currentTarget.style.color = "orange";
       }}
       onMouseLeave={(e) => {
@@ -61,13 +61,13 @@ const ClickableButton = ({ buttonName, icon, path, mode }) => {
               ? "#705017"
               : "#EFCB89"
             : mode === "dark"
-            ? "#111827"
-            : "#E5E5E5"),
+              ? "#111827"
+              : "#E5E5E5"),
           (e.currentTarget.style.color = activeButton === "rgb(242, 242, 242)");
       }}
     >
       <div
-        style={{ fontSize: "24px" }}
+        style={{ fontSize: isMobile ? "16px" : "24px" }}
         onMouseEnter={(e) => {
           // e.currentTarget.style.color = "orange";
         }}
