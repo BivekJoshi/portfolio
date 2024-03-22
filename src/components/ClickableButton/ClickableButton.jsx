@@ -13,11 +13,22 @@ const ClickableButton = ({ buttonName, icon, path, mode }) => {
     setActiveButton(pathh);
   }, [location]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       style={{
-        width: "70px",
-        height: "60px",
+        width: isMobile?"67px":"70px",
+        height: isMobile?"57px":"60px",
         backgroundColor:
           activeButton === path
             ? mode === "dark"
