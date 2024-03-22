@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMode } from "../../layout/ModeContext";
 import HRMS from "../../assets/HRMS.png";
 import { FaGithub } from "react-icons/fa6";
@@ -6,21 +6,33 @@ import { HiOutlineViewGridAdd } from "react-icons/hi";
 
 const WorkModal = ({ data, onClose }) => {
   const { mode } = useMode();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div
       style={{
         position: "fixed",
-        width: "900px",
+        width: isMobile ? "300px" : "900px",
         height: "90%",
         backgroundColor: mode === "dark" ? "#343D49" : "#F2F2F2",
-        zIndex: 999,
+        zIndex: 99999,
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         // padding: "20px",
         borderRadius: "8px",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        overflowY:"scroll",
+
       }}
     >
       {/* <div
@@ -57,8 +69,8 @@ const WorkModal = ({ data, onClose }) => {
             borderRadius: "50%",
             border: "none",
             width: "2rem",
-            hover:{
-              backgroundColor:"red"
+            hover: {
+              backgroundColor: "red"
             }
           }}
           onClick={onClose}
@@ -66,7 +78,7 @@ const WorkModal = ({ data, onClose }) => {
           𝗑
         </button>
       </div>
-      <div style={{ width: "cover", height: "350px" }}>
+      <div style={{ width: "cover", height: isMobile ? "170px" : "350px" }}>
         <img
           src={data?.image}
           style={{ width: "100%", height: "100%", borderRadius: "8px 8px 0 0" }}

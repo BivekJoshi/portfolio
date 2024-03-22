@@ -20,7 +20,7 @@ const LIST = [
     title: "Yejus Paw",
     subTitle: "A complete Guide for your pet",
     image: YejusPaw,
-    desc: "",
+    desc: "Yeju’s Paw is a comprehensive online platform to cater the need of pet lover’s and enthusiast. It provides wide range of products and services related to pets making this system one stop-shop for all your pet need. The main aim of this project is to provide user-friendly interface for the pet owners or future pet owners to create a seamless and enjoyable experience by connecting the customer inquiry to the available pet store or pet owner. The significance of this project lies in its potential to revolutionize pet care, empower pet owners, strengthen the veterinarian-pet owner relationship, and contribute to the overall well-being of pets in a modern and technologically advanced manner.",
   },
   {
     id: 3,
@@ -33,13 +33,13 @@ const LIST = [
     id: 4,
     title: "Clients Portal",
     subTitle: "Complete Back office For Client",
-    image:ClientsPortal,
+    image: ClientsPortal,
   },
   {
     id: 5,
     title: "KYC",
     subTitle: "Know Your Client.",
-    image:ClientsPortal,
+    image: ClientsPortal,
   },
 ];
 const Work = () => {

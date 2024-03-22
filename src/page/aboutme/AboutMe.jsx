@@ -38,6 +38,7 @@ const Skill = [
     title: "Git",
   },
 ];
+
 const AboutMe = () => {
   return (
     <div>
