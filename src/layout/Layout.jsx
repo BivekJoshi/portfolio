@@ -29,7 +29,7 @@ const Layout = () => {
       style={{
         position: "relative",
         width: "100%",
-        height: "100%",
+        height: isMobile ? "100%" : "100vh",
         overflow: "hidden",
         display: "flex",
         justifyContent: "center",
@@ -37,17 +37,25 @@ const Layout = () => {
         color: mode === "dark" ? "#D1D5DB" : "black",
       }}
     >
-      <img
-        src={mode === "dark" ? GIFF : DayTime}
-        alt="background"
-        style={{
+      {isMobile ?
+        <div style={{
           position: "absolute",
+          backgroundColor: mode==="dark"?"#0B0F17":"#BEC2D3",
           width: "100%",
-          height: "100vh",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      />
+          height: "100%",
+          zIndex: -1
+        }}></div> : <img
+          src={mode === "dark" ? GIFF : DayTime}
+          alt="background"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100vh",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
+        />}
+
       {isMobile ?
         <div style={{ width: "90%", height: "100%" }}>
           <Profile mode={mode} />
