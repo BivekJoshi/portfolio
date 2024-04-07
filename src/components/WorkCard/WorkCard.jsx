@@ -29,7 +29,7 @@ const WorkCard = ({ image, title, subTitle, isMobile }) => {
         }}
       >
         <div>{title}</div>
-        <div>{subTitle}</div>
+        <div style={{fontSize:"12px"}}>{subTitle}</div>
       </div>
     </div>
   );

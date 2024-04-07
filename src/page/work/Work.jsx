@@ -87,7 +87,7 @@ const Work = () => {
                   isMobile={isMobile}
                 />
               </div>
-              {index % 2 === 0 && index !== LIST.length - 1 && (
+              {index % 2 === 0 && index !== LIST.length - 1 && !isMobile &&(
                 <div
                   style={{
                     borderRight: "1px solid rgb(119, 119, 119)",
