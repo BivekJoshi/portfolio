@@ -11,6 +11,7 @@ import { IoMdContact } from "react-icons/io";
 import { MdOutlineDensitySmall } from "react-icons/md";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import Cv from "../../assets/BivekCv.pdf";
+import "./TypeWriter.css";
 
 const REDIRECT = [
   // {
@@ -63,6 +64,7 @@ const REDIRECT = [
 const Profile = ({ mode }) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  console.log(isMobile,"isMobile");
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as per your requirement
@@ -100,8 +102,14 @@ const Profile = ({ mode }) => {
                 <div style={{ fontSize: "15px", fontWeight: "bold" }}>
                   Bivek Pd. Joshi
                 </div>
-                <div style={{ fontSize: "15px", fontWeight: "bold" }}>
+                {/* <div style={{ fontSize: "15px", fontWeight: "bold" }}>
                   React Frontend Developer
+                </div> */}
+                <div
+                  className={`animated-text ${mode === "dark" ? "dark-mode" : "light-mode"} && ${isMobile ? "isMobile" : "isNotMobile"}`}
+                  style={{ color: "orange", padding: "0px" }}
+                >
+                  <span></span>
                 </div>
                 <a href={Cv} download="BivekCv.pdf">
                   <button style={{

@@ -1,5 +1,9 @@
-.animated-text {
+.animated-text.isNotMobile {
   font-size: 18px;
+  font-weight: 600;
+}
+.animated-text.isMobile {
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -27,7 +31,7 @@
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   right: -8px;
   animation: cursor 0.8s infinite, typing 25s steps(14) infinite;
 }
