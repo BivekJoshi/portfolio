@@ -61,7 +61,7 @@ const AboutMe = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <p>Address ............ Tangal-19, Lalitpur</p>
-            <div>Age ............ 21</div>
+            <div>Age ............ 22</div>
           </div>
         </div>
       </div>
