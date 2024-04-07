@@ -105,7 +105,7 @@ const Profile = ({ mode }) => {
                 </div>
                 <a href={Cv} download="BivekCv.pdf">
                   <button style={{
-                    backgroundColor: mode==="dark"?"#705017":"#EFCB89",
+                    backgroundColor: mode === "dark" ? "#705017" : "#EFCB89",
                     // border: "1px solid #E5E5E5",
                     padding: "7px",
                     borderRadius: "6px",
