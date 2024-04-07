@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderText from "../../components/HeaderText/HeaderText";
 import WorkCard from "../../components/WorkCard/WorkCard";
 import HRMS from "../../assets/Work/HRMS.png";
@@ -45,6 +45,16 @@ const LIST = [
 const Work = () => {
   const [openModal, setOpenModal] = useState(false);
   const [modalData, setModalData] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); 
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleOpenModal = (data) => {
     setModalData(data);
@@ -74,6 +84,7 @@ const Work = () => {
                   image={data?.image}
                   title={data?.title}
                   subTitle={data?.subTitle}
+                  isMobile={isMobile}
                 />
               </div>
               {index % 2 === 0 && index !== LIST.length - 1 && (

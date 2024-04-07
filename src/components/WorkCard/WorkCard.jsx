@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { FaEye } from "react-icons/fa"; // Import the eye icon
 import "./workCard.css";
 
-const WorkCard = ({ image, title, subTitle }) => {
+const WorkCard = ({ image, title, subTitle,isMobile }) => {
   const [showEyeIcon, setShowEyeIcon] = useState(false);
+  console.log(isMobile,"isMobileisMobile");
   return (
     <div className="work-card-container">
       <div

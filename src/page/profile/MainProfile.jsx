@@ -14,7 +14,6 @@ import Cv from "../../assets/BivekCv.pdf";
 
 const MainProfile = () => {
   const { mode } = useMode();
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
@@ -68,14 +67,19 @@ const MainProfile = () => {
           >
             <span></span>
           </div>
-          <div style={{ display: "flex", gap: "1rem", fonSize: "24px" }}>
+          <div style={{
+            display: "flex", gap: "1rem", fonSize: "24px",
+            color: mode === "dark" ? "white" : "black",
+          }}>
             <FaFacebook
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgb(242, 242, 242)";
+                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open("https://www.facebook.com/bivek.joshi.56", "_blank")
@@ -87,7 +91,7 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgb(242, 242, 242)";
+                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open(
@@ -102,7 +106,7 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgb(242, 242, 242)";
+                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() => window.open("https://discord.com/", "_blank")}
             />
@@ -112,7 +116,7 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = "rgb(242, 242, 242)";
+                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open("https://github.com/BivekJoshi", "_blank")
@@ -132,40 +136,43 @@ const MainProfile = () => {
           cursor: "pointer",
         }}
       >
-        <a href={Cv} download="BivekCv.pdf" style={{
-          width: "50%",
-          borderRight: "1px solid rgb(119, 119, 119)",
-          fontSize: "14px",
-          height: "64px",
-          textDecoration:"none",
-          color:"white"
-        }}>
+        <a href={Cv} download="BivekCv.pdf"
+          style={{
+            width: "50%",
+            borderRight: "1px solid rgb(119, 119, 119)",
+            fontSize: "14px",
+            // height: "64px",
+            textDecoration: "none",
+            color: "white",
+          }}
+        >
           <div
             style={{
               display: "flex",
               aliginItems: "center",
-              justifyContent: "center", gap: "12px", 
-              padding:"1.5rem"
+              justifyContent: "center", gap: "12px",
+              padding: "1.2rem",
+              backgroundColor: mode === "dark" ? "#111827" : "#E5E5E5",
+              color: mode === "dark" ? "#D1D5DB" : "black",
+              borderRadius: "0 0 0 12px"
             }}
-            // onClick={() =>
-            //   window.open(
-            //     "https://www.pdffiller.com/jsfiller-desk20/?flat_pdf_quality=low&requestHash=64921e5ec6debac1ca3dad9839f7eefdac8d323737f1523032d3dcd2a01d6cef&projectId=1461055256&loader=tips&PAGE_REARRANGE_V2_MVP=true&richTextFormatting=true&isPageRearrangeV2MVP=true&jsf-page-rearrange-v2=true&LATEST_PDFJS=true&jsf-document-scroll-zoom=true&jsf-redesign-full=true&act-notary-pro-integration=false&jsf-new-add-fields-popup=false&routeId=d946b1fd11caeaffa9937fe8cb1c57d9#be4ebb6c03ff476880efebd2c3cc4774",
-            //     "_blank"
-            //   )
-            // }
-            // onMouseEnter={(e) => {
-            //   e.currentTarget.style.backgroundColor =
-            //     mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";
-            //   e.currentTarget.style.color = "orange";
-            // }}
-            // onMouseLeave={(e) => {
-            //   e.currentTarget.style.backgroundColor =
-            //     mode === "dark" ? "#111827" : "rgb(229, 229, 229)";
-            //   e.currentTarget.style.color =
-            //     mode === "dark" ? "rgb(242, 242, 242)" : "black";
-            // }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onClick={() =>
+              window.open(
+                "https://www.pdffiller.com/jsfiller-desk20/?flat_pdf_quality=low&requestHash=64921e5ec6debac1ca3dad9839f7eefdac8d323737f1523032d3dcd2a01d6cef&projectId=1461055256&loader=tips&PAGE_REARRANGE_V2_MVP=true&richTextFormatting=true&isPageRearrangeV2MVP=true&jsf-page-rearrange-v2=true&LATEST_PDFJS=true&jsf-document-scroll-zoom=true&jsf-redesign-full=true&act-notary-pro-integration=false&jsf-new-add-fields-popup=false&routeId=d946b1fd11caeaffa9937fe8cb1c57d9#be4ebb6c03ff476880efebd2c3cc4774",
+                "_blank"
+              )
+            }
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor =
+                mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";
+              e.currentTarget.style.color = "orange";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor =
+                mode === "dark" ? "#111827" : "rgb(229, 229, 229)";
+              e.currentTarget.style.color =
+                mode === "dark" ? "rgb(242, 242, 242)" : "black";
+            }}
           >
 
             DOWNLOAD CV
@@ -179,18 +186,21 @@ const MainProfile = () => {
             justifyContent: "center",
             fontSize: "14px",
             gap: "12px",
+            backgroundColor: mode === "dark" ? "#111827" : "#E5E5E5",
+            color: mode === "dark" ? "#D1D5DB" : "black",
+            borderRadius: "0 0 12px 0"
           }}
-          // onMouseEnter={(e) => {
-          //   e.currentTarget.style.backgroundColor =
-          //     mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";
-          //   e.currentTarget.style.color = "orange";
-          // }}
-          // onMouseLeave={(e) => {
-          //   e.currentTarget.style.backgroundColor =
-          //     mode === "dark" ? "#111827" : "rgb(229, 229, 229)";
-          //   e.currentTarget.style.color =
-          //     mode === "dark" ? "rgb(242, 242, 242)" : "black";
-          // }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor =
+              mode === "dark" ? "#1F2937" : "rgb(191, 191, 191)";
+            e.currentTarget.style.color = "orange";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor =
+              mode === "dark" ? "#111827" : "rgb(229, 229, 229)";
+            e.currentTarget.style.color =
+              mode === "dark" ? "rgb(242, 242, 242)" : "black";
+          }}
           onClick={() =>
             window.open(
               "https://www.linkedin.com/in/bivek-joshi-68b02b239/",

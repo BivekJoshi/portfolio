@@ -61,7 +61,6 @@ const REDIRECT = [
   },
 ];
 const Profile = ({ mode }) => {
-  // console.log(mode,"modddddddddddddddddddddddd");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
