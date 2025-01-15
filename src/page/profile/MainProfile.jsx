@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import Scene from "../../assets/Scene.jpg";
 import Scene from "../../assets/Patan.jpg";
+import NightScene from "../../assets/PatanNight.jpeg";
 import MyPhoto from "../../assets/MyPhoto.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaCloudDownloadAlt } from "react-icons/fa";
@@ -19,7 +20,7 @@ const MainProfile = () => {
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <>
         <img
-          src={Scene}
+          src={mode === "dark" ? NightScene : Scene}
           style={{
             width: "100%",
             height: "360px",
@@ -61,16 +62,21 @@ const MainProfile = () => {
             Bivek Pd. Joshi
           </div>
           <div
-            className={`animated-text ${mode === "dark" ? "dark-mode" : "light-mode"
-              }`}
+            className={`animated-text ${
+              mode === "dark" ? "dark-mode" : "light-mode"
+            }`}
             style={{ color: "orange", padding: "10px" }}
           >
             <span></span>
           </div>
-          <div style={{
-            display: "flex", gap: "1rem", fonSize: "24px",
-            color: mode === "dark" ? "white" : "black",
-          }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              fonSize: "24px",
+              color: mode === "dark" ? "white" : "black",
+            }}
+          >
             <FaFacebook
               style={{
                 cursor: "pointer",
@@ -79,7 +85,8 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
+                e.currentTarget.style.color =
+                  mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open("https://www.facebook.com/bivek.joshi.56", "_blank")
@@ -91,7 +98,8 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
+                e.currentTarget.style.color =
+                  mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open(
@@ -106,7 +114,8 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
+                e.currentTarget.style.color =
+                  mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() => window.open("https://discord.com/", "_blank")}
             />
@@ -116,7 +125,8 @@ const MainProfile = () => {
                 e.currentTarget.style.color = "orange";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = mode === "dark" ? "rgb(242, 242, 242)" : "black";
+                e.currentTarget.style.color =
+                  mode === "dark" ? "rgb(242, 242, 242)" : "black";
               }}
               onClick={() =>
                 window.open("https://github.com/BivekJoshi", "_blank")
@@ -136,7 +146,9 @@ const MainProfile = () => {
           cursor: "pointer",
         }}
       >
-        <a href={Cv} download="BivekCv.pdf"
+        <a
+          href={Cv}
+          download="BivekCv.pdf"
           style={{
             width: "50%",
             borderRight: "1px solid rgb(119, 119, 119)",
@@ -150,11 +162,12 @@ const MainProfile = () => {
             style={{
               display: "flex",
               aliginItems: "center",
-              justifyContent: "center", gap: "12px",
+              justifyContent: "center",
+              gap: "12px",
               padding: "1.2rem",
               backgroundColor: mode === "dark" ? "#111827" : "#E5E5E5",
               color: mode === "dark" ? "#D1D5DB" : "black",
-              borderRadius: "0 0 0 12px"
+              borderRadius: "0 0 0 12px",
             }}
             onClick={() =>
               window.open(
@@ -174,10 +187,10 @@ const MainProfile = () => {
                 mode === "dark" ? "rgb(242, 242, 242)" : "black";
             }}
           >
-
             DOWNLOAD CV
             <FaCloudDownloadAlt style={{ fontSize: "24px" }} />
-          </div></a>
+          </div>
+        </a>
         <div
           style={{
             width: "50%",
@@ -188,7 +201,7 @@ const MainProfile = () => {
             gap: "12px",
             backgroundColor: mode === "dark" ? "#111827" : "#E5E5E5",
             color: mode === "dark" ? "#D1D5DB" : "black",
-            borderRadius: "0 0 12px 0"
+            borderRadius: "0 0 12px 0",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor =

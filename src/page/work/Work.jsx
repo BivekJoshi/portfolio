@@ -5,6 +5,8 @@ import HRMS from "../../assets/Work/HRMS.png";
 import YejusPaw from "../../assets/Work/YejusPaw.png";
 import Render from "../../assets/Work/Render.png";
 import ClientsPortal from "../../assets/Work/ClientsPortal.png";
+import Legal from "../../assets/Work/Legal.png";
+
 import WorkModal from "../../components/Modal/WorkModal";
 
 const LIST = [
@@ -12,7 +14,7 @@ const LIST = [
     id: 6,
     title: "Legal Remit",
     subTitle: "Send Money From Abroad",
-    image: ClientsPortal,
+    image: Legal,
   },
   {
     id: 7,
