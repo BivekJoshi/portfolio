@@ -10,6 +10,7 @@ import LinkFollow from "../page/stats/LinkFollow";
 import Education from "../page/education/Education";
 import { ModeProvider } from "../layout/ModeContext";
 import Loader from "../components/Loader/Loader";
+import Tiktakto from "../page/Games/Tiktakto/Tiktakto";
 
 const AppRoutes = () => {
   const [loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ const AppRoutes = () => {
               <Route path="/work" element={<Work />} />
               <Route path="/stats" element={<LinkFollow />} />
               <Route path="/education" element={<Education />} />
+              <Route path="/game" element={<Tiktakto />} />
             </Route>
           </Routes>
         )}

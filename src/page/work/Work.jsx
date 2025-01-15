@@ -9,6 +9,18 @@ import WorkModal from "../../components/Modal/WorkModal";
 
 const LIST = [
   {
+    id: 6,
+    title: "Legal Remit",
+    subTitle: "Send Money From Abroad",
+    image: ClientsPortal,
+  },
+  {
+    id: 7,
+    title: "Bizaree System",
+    subTitle: "Complete Restro Management System",
+    image: ClientsPortal,
+  },
+  {
     id: 1,
     title: "HRMS",
     subTitle: "Human Resource Management System",
@@ -49,10 +61,10 @@ const Work = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
     window.addEventListener("resize", handleResize);
-    handleResize(); 
+    handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -87,7 +99,7 @@ const Work = () => {
                   isMobile={isMobile}
                 />
               </div>
-              {index % 2 === 0 && index !== LIST.length - 1 && !isMobile &&(
+              {index % 2 === 0 && index !== LIST.length - 1 && !isMobile && (
                 <div
                   style={{
                     borderRight: "1px solid rgb(119, 119, 119)",

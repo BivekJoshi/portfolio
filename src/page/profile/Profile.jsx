@@ -64,7 +64,6 @@ const REDIRECT = [
 const Profile = ({ mode }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  console.log(isMobile,"isMobile");
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // Adjust the breakpoint as per your requirement

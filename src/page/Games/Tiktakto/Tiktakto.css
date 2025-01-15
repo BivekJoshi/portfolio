@@ -1,0 +1,65 @@
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.square:hover {
+  background: #e0e0e0;
+}
+
+.square.light-mode {
+  background: #2b2929;
+  border-radius: 4px;
+  font-size: 5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.square.dark-mode {
+  background: rgb(0 0 0 / 0%);
+  border-radius: 4px;
+  font-size: 5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.square.red {
+  color: red;
+}
+
+.square.blue {
+  color: blue;
+}
+
+.winning-line {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.7);
+  height: 4px;
+  transform-origin: 0% 50%;
+  z-index: 1;
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.restart-button:hover {
+  background: #45a049;
+}

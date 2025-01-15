@@ -22,7 +22,7 @@ const MainProfile = () => {
           src={Scene}
           style={{
             width: "100%",
-            height: "270px",
+            height: "360px",
             borderRadius: "50% 0% 49% 51% / 0% 55% 45% 46%",
           }}
           alt="Scene"
