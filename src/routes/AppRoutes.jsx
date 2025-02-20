@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import HeaderText from "../components/HeaderText/HeaderText";
 import AboutMe from "../page/aboutme/AboutMe";
@@ -22,7 +22,7 @@ const AppRoutes = () => {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter hashType="slash">
       <ModeProvider>
         {loading ? (
           <Loader />
@@ -42,7 +42,7 @@ const AppRoutes = () => {
           </Routes>
         )}
       </ModeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
